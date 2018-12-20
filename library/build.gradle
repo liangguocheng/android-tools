@@ -62,8 +62,8 @@ dependencies {
     compile 'com.just.agentweb:agentweb:4.0.2'
 
     //检查更新
-    implementation 'com.qianwen:update-app:3.5.2'
-    implementation 'com.qianwen:okhttp-utils:3.8.0'
+    compile 'com.qianwen:update-app:3.5.2'
+    compile 'com.qianwen:okhttp-utils:3.8.0'
 
     //通用适配器
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
