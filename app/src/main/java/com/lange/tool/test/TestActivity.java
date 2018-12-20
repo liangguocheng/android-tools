@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.lange.tool.R;
 import com.lange.tool.mvp.MVPBaseActivity;
-import com.orhanobut.logger.Logger;
+import com.lange.tools.util.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -40,6 +40,6 @@ public class TestActivity extends MVPBaseActivity<TestContract.View, TestPresent
 
     @OnClick(R.id.tv_test)
     public void test(){
-        Logger.d("test");
+        LogUtils.d("test");
     }
 }

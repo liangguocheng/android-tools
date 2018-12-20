@@ -9,13 +9,15 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lange.tool.events.EventBusBean;
 import com.lange.tool.network.ApiService;
 import com.lange.tool.test.TestActivity;
+import com.lange.tool.web.WebActivity;
 import com.lange.tools.base.BaseActivity;
-import com.lange.tools.common.Tools;
+import com.lange.tools.base.BaseWebActivity;
 import com.lange.tools.manager.GlideCacheManager;
 import com.lange.tools.manager.UpgradeManager;
 import com.lange.tools.network.RetrofitClient;
 import com.lange.tools.network.RetrofitLoadingObserver;
 import com.lange.tools.network.RetrofitNormalObserver;
+import com.lange.tools.util.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -81,7 +83,7 @@ public class MainActivity extends BaseActivity {
     @Subscribe
     public void eventBus(EventBusBean<String> bean) {
         if (bean.getTag() == EventBusBean.TAG_TEST) {
-            Tools.toast().showToast(bean.getModel());
+            ToastUtils.showShort(bean.getModel());
         }
     }
 
@@ -104,5 +106,12 @@ public class MainActivity extends BaseActivity {
                     }
                 })
                 .show();
+    }
+
+    @OnClick(R.id.btn_webview)
+    public void webview(){
+        Intent intent = new Intent(this, WebActivity.class);
+        intent.putExtra(BaseWebActivity.URL_TAG,"http://www.jd.com");
+        startActivity(intent);
     }
 }

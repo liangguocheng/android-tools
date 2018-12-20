@@ -22,6 +22,7 @@
         </activity>
 
         <activity android:name=".test.TestActivity"/>
+        <activity android:name=".web.WebActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

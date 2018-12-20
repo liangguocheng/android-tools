@@ -5,9 +5,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 
 import com.lange.tools.base.BaseActivity;
-import com.lange.tools.common.Tools;
 
 import java.lang.reflect.ParameterizedType;
 
@@ -71,7 +71,7 @@ public abstract class MVPBaseActivity<V extends BaseView, T extends BasePresente
     @Override
     public void showHUD(String msg) {
         showHUD();
-        if (!Tools.string().isEmpty(msg)) {
+        if (!TextUtils.isEmpty(msg)) {
             mProgressDialog.setMessage(msg);
         }
     }
