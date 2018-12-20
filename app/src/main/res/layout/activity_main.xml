@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space_size"
+    tools:context="com.lange.tool.MainActivity">
+
+    <Button
+        android:id="@+id/btn_network_without_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit请求" />
+
+    <Button
+        android:id="@+id/btn_network_with_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit请求2" />
+
+    <Button
+        android:id="@+id/btn_mvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MVP结构" />
+
+    <Button
+        android:id="@+id/btn_eventbus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EventBus" />
+
+    <Button
+        android:id="@+id/btn_upgrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检查更新" />
+
+    <Button
+        android:id="@+id/btn_glide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Glide图片缓存" />
+
+
+</LinearLayout>
