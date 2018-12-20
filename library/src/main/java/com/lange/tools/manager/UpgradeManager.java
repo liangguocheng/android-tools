@@ -3,7 +3,7 @@ package com.lange.tools.manager;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 
-import com.lange.tools.common.Tools;
+import com.lange.tools.util.AppUtils;
 import com.vector.update_app.HttpManager;
 import com.vector.update_app.UpdateAppBean;
 import com.vector.update_app.UpdateAppManager;
@@ -60,7 +60,7 @@ public class UpgradeManager {
             @Override
             protected UpdateAppBean parseJson(String json) {
                 UpdateAppBean updateAppBean = new UpdateAppBean();
-                String localVersionName = Tools.appTool().getVersionNameFromPackage(activity);
+                String localVersionName = AppUtils.getAppVersionName();
                 updateAppBean
                         //（必须）是否更新Yes,No
                         .setUpdate((localVersionName.compareTo(serverVersionCode) < 0 ? "Yes" : "No"))

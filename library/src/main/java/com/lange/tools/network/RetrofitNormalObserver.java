@@ -4,9 +4,8 @@ import android.net.ParseException;
 
 import com.google.gson.JsonParseException;
 import com.lange.tools.R;
-import com.lange.tools.common.Tools;
-import com.orhanobut.logger.Logger;
-
+import com.lange.tools.util.LogUtils;
+import com.lange.tools.util.ToastUtils;
 import org.json.JSONException;
 
 import java.net.ConnectException;
@@ -54,7 +53,7 @@ public abstract class RetrofitNormalObserver<T> implements Observer<T> {
 
     @Override
     public void onError(Throwable e) {
-        Logger.e(e.getLocalizedMessage());
+        LogUtils.e(e.getLocalizedMessage());
         Throwable throwable = e;
         //获取最根源的异常
         while (throwable.getCause() != null) {
@@ -63,15 +62,15 @@ public abstract class RetrofitNormalObserver<T> implements Observer<T> {
         }
         if (e instanceof ConnectException) {
             //均视为网络错误
-            Tools.toast().showToast(R.string.network_http_exception);
+            ToastUtils.showShort(R.string.network_http_exception);
         } else if (e instanceof JsonParseException
                 || e instanceof JSONException
                 || e instanceof ParseException) {
             //均视为解析错误
-            Tools.toast().showToast(R.string.network_json_parseexception);
+            ToastUtils.showShort(R.string.network_json_parseexception);
         } else {
             //服务器异常
-            Tools.toast().showToast(R.string.network_server_exception);
+            ToastUtils.showShort(R.string.network_server_exception);
         }
         fail();
     }

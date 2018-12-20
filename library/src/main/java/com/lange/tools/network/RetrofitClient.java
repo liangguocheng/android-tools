@@ -1,10 +1,11 @@
 package com.lange.tools.network;
 
+import android.text.TextUtils;
+
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.lange.tools.common.Tools;
-import com.orhanobut.logger.Logger;
+import com.lange.tools.util.LogUtils;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -47,8 +48,8 @@ public class RetrofitClient {
         }
         //基础接口地址
         String base_url = getFieldValueByFieldName("BASE_URL", t);
-        if (Tools.string().isEmpty(base_url)) {
-            Logger.e("api接口类中必须含有BASE_URL成员属性");
+        if (TextUtils.isEmpty(base_url)) {
+            LogUtils.e("api接口类中必须含有BASE_URL成员属性");
             return null;
         }
         //接口请求日志

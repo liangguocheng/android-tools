@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 import com.lange.tools.R;
-import com.lange.tools.common.Tools;
 
 import io.reactivex.disposables.Disposable;
 

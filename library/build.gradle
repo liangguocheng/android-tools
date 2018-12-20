@@ -52,9 +52,6 @@ dependencies {
     //EventBus
     compile 'org.greenrobot:eventbus:3.0.0'
 
-    //日志框架
-    compile 'com.orhanobut:logger:2.2.0'
-
     //material对话框
     compile 'com.afollestad.material-dialogs:commons:0.9.6.0'
 
