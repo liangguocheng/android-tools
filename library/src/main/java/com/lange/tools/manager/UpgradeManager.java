@@ -3,6 +3,10 @@ package com.lange.tools.manager;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 
+import com.lange.tools.api.CommonApi;
+import com.lange.tools.model.PgyUpgradeModel;
+import com.lange.tools.network.RetrofitClient;
+import com.lange.tools.network.RetrofitNormalObserver;
 import com.lange.tools.util.AppUtils;
 import com.vector.update_app.HttpManager;
 import com.vector.update_app.UpdateAppBean;
@@ -102,6 +106,30 @@ public class UpgradeManager {
 
             }
         });
+    }
+
+
+    /**
+     * 通过蒲公英接口检查更新
+     *
+     * @param activity
+     * @param apiKey
+     * @param appKey
+     */
+    public static void checkPgyerUpdate(Activity activity, String apiKey, String appKey) {
+        RetrofitClient.getInstance(CommonApi.class).pgyerCheckUpgrade("https://www.pgyer.com/apiv2/app/check/",apiKey, appKey)
+                .compose(RetrofitClient.compose())
+                .subscribe(new RetrofitNormalObserver<PgyUpgradeModel>() {
+
+                    @Override
+                    protected void success(PgyUpgradeModel responseBody) {
+                        if (responseBody.getCode() == 0) {
+                            PgyUpgradeModel.Data model = responseBody.getData();
+                            upgrade(activity, model.getBuildVersion(), model.getBuildUpdateDescription(),
+                                    false, model.getDownloadURL());
+                        }
+                    }
+                });
     }
 
 

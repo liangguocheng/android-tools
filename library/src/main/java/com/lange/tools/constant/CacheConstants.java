@@ -2,8 +2,8 @@ package com.lange.tools.constant;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *
+ *
  *     time  : 2018/06/13
  *     desc  : constants of cache
  * </pre>

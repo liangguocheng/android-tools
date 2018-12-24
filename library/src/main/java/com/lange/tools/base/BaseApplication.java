@@ -23,6 +23,8 @@ public class BaseApplication extends Application {
         Utils.init(this);
         //初始化日志框架
         LogUtils.d("app启动完成");
+        //奔溃处理 发送异常信息邮件
+        CrashHandler.init(this);
     }
 
     public static BaseApplication getInstance() {

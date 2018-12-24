@@ -89,7 +89,11 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_upgrade)
     public void upgrade() {
-        UpgradeManager.upgrade(this,"1.5","有新版本发布了~",false,"https://www.wandoujia.com/apps/com.android.chrome/binding?source=web_seo_baidu_binded");
+//        UpgradeManager.upgrade(this,"1.5","有新版本发布了~",false,"https://www.wandoujia.com/apps/com.android.chrome/binding?source=web_seo_baidu_binded");
+//        UpgradeManager.checkPgyerUpdate(this,"b365db70229dc64ac243bae44d65ff2e","f6b7d39c699e0fedb4ad72806906cd86");
+        int a=0;
+        int b=1/a;
+        System.out.println(b);
     }
 
     @OnClick(R.id.btn_glide)

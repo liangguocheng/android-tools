@@ -13,8 +13,8 @@ import java.util.Arrays;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *
+ *
  *     time  : 2017/12/29
  *     desc  : constants of permission
  * </pre>

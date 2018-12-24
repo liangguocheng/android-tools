@@ -3,6 +3,8 @@
     <string name="network_http_exception">当前网络不可用，请检查网络设置</string>
     <string name="network_json_parseexception">服务器数据异常，请稍候再试</string>
     <string name="network_server_exception">服务器异常，请稍候再试</string>
-
     <string name="network_request_loading">正在加载中...</string>
+    <string name="app_carsh_error">很抱歉,程序出现异常,即将退出.</string>
+
+
 </resources>
