@@ -66,9 +66,9 @@ public class BaseWebActivity extends AppCompatActivity {
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mAgentWeb.back()){
+                if (mAgentWeb.back()) {
 
-                }else{
+                } else {
                     showDialog();
                 }
             }
@@ -130,7 +130,7 @@ public class BaseWebActivity extends AppCompatActivity {
 
         if (mAlertDialog == null) {
             mAlertDialog = new AlertDialog.Builder(this)
-                    .setMessage("您确定要关闭该页面吗?")
+                    .setMessage(getAlertDialogExitTip())
                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -146,12 +146,28 @@ public class BaseWebActivity extends AppCompatActivity {
                             if (mAlertDialog != null) {
                                 mAlertDialog.dismiss();
                             }
-                            BaseWebActivity.this.finish();
+                            alertDialogPositiveAction();
                         }
                     }).create();
         }
         mAlertDialog.show();
 
+    }
+
+    /**
+     * 退出提示
+     *
+     * @return
+     */
+    protected String getAlertDialogExitTip() {
+        return "您确定要关闭该页面吗?";
+    }
+
+    /**
+     * 退出web动作
+     */
+    protected void alertDialogPositiveAction() {
+        BaseWebActivity.this.finish();
     }
 
     @Override
