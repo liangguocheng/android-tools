@@ -4,56 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.lange.tool.MainActivity">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/space_size">
+        android:padding="10dp">
 
         <Button
-            android:id="@+id/btn_network_without_dialog"
+            android:id="@+id/btn_permission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Retrofit请求" />
+            android:text="申请权限" />
 
         <Button
-            android:id="@+id/btn_network_with_dialog"
+            android:id="@+id/btn_swipeback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Retrofit请求2" />
+            android:text="侧滑返回" />
 
         <Button
-            android:id="@+id/btn_mvp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MVP结构" />
-
-        <Button
-            android:id="@+id/btn_eventbus"
+            android:id="@+id/btn_eventBus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="EventBus" />
-
-        <Button
-            android:id="@+id/btn_upgrade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="检查更新" />
-
-        <Button
-            android:id="@+id/btn_glide"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Glide图片缓存" />
-
-        <Button
-            android:id="@+id/btn_webview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="封装webview" />
-
     </LinearLayout>
 </ScrollView>
