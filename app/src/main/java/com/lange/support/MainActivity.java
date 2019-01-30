@@ -19,6 +19,11 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.ResponseBody;
+import rx.Scheduler;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity {
 
@@ -76,4 +81,29 @@ public class MainActivity extends BaseActivity {
         LogUtils.d(obj);
         SnackbarUtils.with(getWindow().getDecorView()).setMessage(String.valueOf(obj)).show();
     }
+
+    @OnClick(R.id.btn_http)
+    public void http() {
+        HttpHelper.getInstance().getApiService().test()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<ResponseBody>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+
+                    }
+                });
+    }
+
+
 }

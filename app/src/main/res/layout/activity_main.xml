@@ -29,5 +29,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="EventBus" />
+
+        <Button
+            android:id="@+id/btn_http"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Http" />
     </LinearLayout>
 </ScrollView>
