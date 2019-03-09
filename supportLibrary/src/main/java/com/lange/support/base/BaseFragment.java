@@ -34,7 +34,7 @@ public abstract class BaseFragment extends Fragment {
      */
     private boolean isPrepared;
 
-    abstract @LayoutRes
+    public abstract @LayoutRes
     int getLayoutRes();
 
     @Override
