@@ -91,9 +91,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-        }
     }
 
     /**
@@ -110,13 +107,4 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
-    /**
-     * 注册EventBus
-     */
-    protected void registerEventBus() {
-        // 防止用户切换是重复注册
-        if (!EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-        }
-    }
 }

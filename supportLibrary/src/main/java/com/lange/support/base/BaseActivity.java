@@ -81,7 +81,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isSwipeBackEnable()) {
             SwipeBackHelper.onDestroy(this);
         }
-        unRegisterEventBus();
     }
 
     @Override
@@ -103,31 +102,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         overridePendingTransition(0, R.anim.base_slide_right_out);
     }
 
-    /**
-     * 注册EventBus
-     */
-    protected void registerEventBus() {
-        // 防止用户切换是重复注册
-        if (!EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-        }
-    }
-
-    /**
-     * 发送事件消息
-     */
-    protected void postEvent(Object event) {
-        EventBus.getDefault().post(event);
-    }
-
-    /**
-     * 反注册EventBus
-     */
-    private void unRegisterEventBus() {
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-        }
-    }
 
 
     /**
