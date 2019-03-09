@@ -69,13 +69,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        SwipeBackHelper.onPostCreate(this);
+        //侧滑返回
+        if (isSwipeBackEnable()) {
+            SwipeBackHelper.onPostCreate(this);
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SwipeBackHelper.onDestroy(this);
+        if (isSwipeBackEnable()) {
+            SwipeBackHelper.onDestroy(this);
+        }
         unRegisterEventBus();
     }
 
